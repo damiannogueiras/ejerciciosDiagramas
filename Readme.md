@@ -1,12 +1,202 @@
-¡Hola estudiantes! Soy su profesor de C++ para nivel básico. Hoy vamos a fortalecer nuestras habilidades de lógica y programación creando diagramas de flujo y pseudocódigo para resolver problemas sencillos. Aquí tienen cinco enunciados de programas que combinan condicionales (if/else) y bucles (for/while).
 
-**Instrucciones:**
 
 1.  Para cada enunciado, creen un diagrama de flujo y un pseudocódigo.
 2.  Luego, escriban el código C++ correspondiente.
 3.  Finalmente, comparen su código con las respuestas proporcionadas.
 
-¡Manos a la obra!
+¡Entendido! Aquí están los tres primeros ejercicios de la lista original, con el tercero modificado para que solo calcule y (condicionalmente) imprima la diagonal principal:
+
+**Enunciados de los ejercicios:**
+
+1.  **Buscador de Máximo y Mínimo en Array Unidimensional:** Escribe un programa que pida al usuario el tamaño de un array unidimensional de enteros. Luego, permite al usuario ingresar los elementos del array. El programa debe encontrar y mostrar el valor máximo y el valor mínimo del array.
+
+2.  **Matriz Identidad Condicional:** Crea un programa que pida al usuario la dimensión de una matriz cuadrada. El programa debe crear una matriz identidad de esa dimensión, pero solo si la dimensión es un número par. Si la dimensión es impar, debe llenar la matriz con ceros. Imprime la matriz resultante.
+
+3.  **Suma de Diagonal Principal (con Condición):** Escribe un programa que pida al usuario la dimensión de una matriz cuadrada. Luego, permite al usuario ingresar los elementos de la matriz. El programa debe calcular la suma de los elementos de la diagonal principal. Si la suma de la diagonal principal es mayor que 100, imprime la diagonal principal; de lo contrario, imprime un mensaje indicando que la suma no superó el valor 100.
+
+**Soluciones :**
+
+**1. Buscador de Máximo y Mínimo en Array Unidimensional:**
+
+*   **Diagrama de Flujo (Mermaid):**
+
+```mermaid
+graph TD
+    A[Inicio] --> B{"Ingresar tamaño del array n"};
+    B --> C[Crear array de tamaño n];
+    C --> D{Ingresar elementos del array};
+    D --> E["max = array[0], min = array[0]"];
+    E --> F[i = 1];
+    F --> G{i < n?};
+    G -- Yes --> H{"array[i] > max?"};
+    H -- Yes --> I["max = array[i]"];
+    I --> J{"array[i] < min?"};
+    J -- Yes --> K["min = array[i]"];
+    K --> L[i = i + 1];
+    L --> F;
+    J -- No --> L;
+    H -- No --> J;
+    G -- No --> M[Imprimir max, min];
+    M --> N[Fin];
+```
+
+*   **Pseudocódigo:**
+
+```
+INICIO
+    ENTRADA n (tamaño del array)
+    CREAR array[n]
+    PARA i = 0 HASTA n-1 HACER
+        ENTRADA array[i]
+    FINPARA
+    max = array[0]
+    min = array[0]
+    PARA i = 1 HASTA n-1 HACER
+        SI array[i] > max ENTONCES
+            max = array[i]
+        FINSI
+        SI array[i] < min ENTONCES
+            min = array[i]
+        FINSI
+    FINPARA
+    IMPRIMIR "Máximo: " + max
+    IMPRIMIR "Mínimo: " + min
+FIN
+```
+
+*   **Código C++:**
+
+```cpp
+#include <iostream>
+#include <limits> // Para usar numeric_limits
+
+using namespace std;
+
+int main() {
+  int n;
+
+  cout << "Ingrese el tamaño del array: ";
+  cin >> n;
+
+  int array[n]; // Creación del array
+
+  cout << "Ingrese los elementos del array:" << endl;
+  for (int i = 0; i < n; ++i) {
+    cin >> array[i];
+  }
+
+  int max = array[0];
+  int min = array[0];
+
+  for (int i = 1; i < n; ++i) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+    if (array[i] < min) {
+      min = array[i];
+    }
+  }
+
+  cout << "Máximo: " << max << endl;
+  cout << "Mínimo: " << min << endl;
+
+  return 0;
+}
+```
+
+**2. Matriz Identidad Condicional:**
+
+*   **Diagrama de Flujo (Mermaid):**
+
+```mermaid
+graph TD
+    A[Inicio] --> B{"Ingresar dimensión (n)"};
+    B --> C{"n es par?"};
+    C -- Yes --> D[Crear matriz identidad de n x n];
+    C -- No --> E[Crear matriz de n x n llena de ceros];
+    D --> F{Imprimir matriz};
+    E --> F;
+    F --> G[Fin];
+
+```
+
+*   **Pseudocódigo:**
+
+```
+INICIO
+    ENTRADA n (dimensión de la matriz)
+    SI n es par ENTONCES
+        CREAR matriz[n][n] (matriz identidad)
+        PARA i = 0 HASTA n-1 HACER
+            PARA j = 0 HASTA n-1 HACER
+                SI i == j ENTONCES
+                    matriz[i][j] = 1
+                SINO
+                    matriz[i][j] = 0
+                FINSI
+            FINPARA
+        FINPARA
+    SINO
+        CREAR matriz[n][n] (matriz llena de ceros)
+        PARA i = 0 HASTA n-1 HACER
+            PARA j = 0 HASTA n-1 HACER
+                matriz[i][j] = 0
+            FINPARA
+        FINPARA
+    FINSI
+    IMPRIMIR matriz
+FIN
+```
+
+*   **Código C++:**
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+
+  cout << "Ingrese la dimensión de la matriz cuadrada: ";
+  cin >> n;
+
+  int matriz[n][n];
+
+  if (n % 2 == 0) {
+    // Crear matriz identidad
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < n; ++j) {
+        if (i == j) {
+          matriz[i][j] = 1;
+        } else {
+          matriz[i][j] = 0;
+        }
+      }
+    }
+  } else {
+    // Llenar la matriz con ceros
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < n; ++j) {
+        matriz[i][j] = 0;
+      }
+    }
+  }
+
+  // Imprimir la matriz
+  cout << "La matriz resultante es:" << endl;
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      cout << matriz[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  return 0;
+}
+```
+
+**3.
 
 **Enunciados de los programas:**
 
