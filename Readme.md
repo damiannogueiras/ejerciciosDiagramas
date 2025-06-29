@@ -1,228 +1,259 @@
+### Examen de Programación (Funciones)
+**Preguntas Teóricas:**
+
+1.    **¿Cuál es el principal beneficio de usar la programación modular?**
+
+    a)  Hace que el código sea más difícil de entender para los demás.    
+    b)  Permite reutilizar código, facilita el mantenimiento y la depuración.    
+    c)  Obliga a usar nombres de variables muy largos.  
+    d)  Permite que el compilador se tome un descanso más largo.  
 
 
-1.  Para cada enunciado, creen un diagrama de flujo y un pseudocódigo.
-2.  Luego, escriban el código C++ correspondiente.
-3.  Finalmente, comparen su código con las respuestas proporcionadas.
+2.    **En C++, ¿cómo se implementan los subprogramas?**
 
-¡Entendido! Aquí están los tres primeros ejercicios de la lista original, con el tercero modificado para que solo calcule y (condicionalmente) imprima la diagonal principal:
+    a)  Con instrucciones mágicas.  
+    b)  Con funciones.  
+    c)  Con hechizos y conjuros.  
+    d)  Con poemas épicos.  
 
-**Enunciados de los ejercicios:**
+3.    **¿Qué es la "cabecera" de una función?**
 
-1.  **Buscador de Máximo y Mínimo en Array Unidimensional:** Escribe un programa que pida al usuario el tamaño de un array unidimensional de enteros. Luego, permite al usuario ingresar los elementos del array. El programa debe encontrar y mostrar el valor máximo y el valor mínimo del array.
+    a)  La parte de arriba de un comentario.  
+    b)  El tipo de valor devuelto, el nombre de la función y la lista de parámetros.  
+    c)  Un sombrero que se pone el programador cuando crea la función.  
+    d)  La directiva `#include`.  
 
-2.  **Matriz Identidad Condicional:** Crea un programa que pida al usuario la dimensión de una matriz cuadrada. El programa debe crear una matriz identidad de esa dimensión, pero solo si la dimensión es un número par. Si la dimensión es impar, debe llenar la matriz con ceros. Imprime la matriz resultante.
+4.    **¿Qué significa que una función sea de tipo `void`?**
 
-3.  **Suma de Diagonal Principal (con Condición):** Escribe un programa que pida al usuario la dimensión de una matriz cuadrada. Luego, permite al usuario ingresar los elementos de la matriz. El programa debe calcular la suma de los elementos de la diagonal principal. Si la suma de la diagonal principal es mayor que 100, imprime la diagonal principal; de lo contrario, imprime un mensaje indicando que la suma no superó el valor 100.
+    a)  Que no tiene alma.  
+    b)  Que no devuelve ningún valor.  
+    c)  Que solo puede ser llamada por fantasmas.  
+    d)  Que está vacía y no hace nada.  
 
-**Soluciones :**
+5.    **¿Cuál es la propiedad por la cual las funciones tienen la capacidad de llamarse a sí mismas?**
 
-**1. Buscador de Máximo y Mínimo en Array Unidimensional:**
+    a)  La arrogancia.  
+    b)  La recursividad.  
+    c)  La telepatía.  
+    d)  El egocentrismo.  
 
-*   **Diagrama de Flujo (Mermaid):**
+6.    **¿Qué son los prototipos de función?**
 
-```mermaid
-graph TD
-    A[Inicio] --> B{"Ingresar tamaño del array n"};
-    B --> C[Crear array de tamaño n];
-    C --> D{Ingresar elementos del array};
-    D --> E["max = array[0], min = array[0]"];
-    E --> F[i = 1];
-    F --> G{i < n?};
-    G -- Yes --> H{"array[i] > max?"};
-    H -- Yes --> I["max = array[i]"];
-    I --> J{"array[i] < min?"};
-    J -- Yes --> K["min = array[i]"];
-    K --> L[i = i + 1];
-    L --> F;
-    J -- No --> L;
-    H -- No --> J;
-    G -- No --> M[Imprimir max, min];
-    M --> N[Fin];
+    a) Una versión temprana e inacabada de la función
+    b) La parte que describe la función pero no la implementa
+    c) Funciones para imprimir código
+    d) Versiones a escala para ver el diseño
+
+7.    **En C++, ¿por qué es importante el orden en el que se declaran las funciones?**
+
+    a) Para que el código se vea más bonito.  
+    b) Porque el compilador necesita saber de la existencia de la función antes de usarla.  
+    c) Porque si no el programa no se ejecutará durante la noche.  
+    d) En realidad el orden no importa.  
+
+8.    **¿Qué son los parámetros de una función?**
+
+    a) Las variables que se utilizan solo para decorar la función.  
+    b) Las variables locales a las que se les asigna un valor antes de ejecutar el cuerpo de la función.  
+    c) Los nombres que usa la función para insultar a otras funciones.  
+    d) Las condiciones climáticas necesarias para que la función se ejecute.  
+
+9.    **¿Qué ocurre cuando se pasa un parámetro por valor a una función?**
+
+    a) La función puede modificar la variable original.  
+    b) Se realiza una copia del valor de la variable en el ámbito de la función.  
+    c) La variable original se teletransporta al ámbito de la función.  
+    d) El valor de la variable original se convierte en oro.  
+
+10.   **¿Cuándo es útil el paso por referencia?**
+
+    a) Cuando no te sabes el nombre de la variable que quieres modificar.  
+    b) Cuando quieres modificar la variable original desde la función.  
+    c) Cuando la variable original está muy lejos.  
+    d) Cuando la variable original es demasiado grande para copiarla.  
+
+**Preguntas con Código:**
+
+11.   **¿Qué imprime este código?**
+
+```c++
+int suma(int a, int b) {
+    return a + b;
+}
+int main() {
+    int x = 5;
+    suma(x, "hola");
+    return 0;
+}
 ```
 
-*   **Pseudocódigo:**
+    a) "8"  
+    b) "Error de compilación: no se puede sumar un entero y una cadena.  "  
+    c) "5hola"  
+    d) "Depende de si la cadena es muy amigable"  
 
-```
-INICIO
-    ENTRADA n (tamaño del array)
-    CREAR array[n]
-    PARA i = 0 HASTA n-1 HACER
-        ENTRADA array[i]
-    FINPARA
-    max = array[0]
-    min = array[0]
-    PARA i = 1 HASTA n-1 HACER
-        SI array[i] > max ENTONCES
-            max = array[i]
-        FINSI
-        SI array[i] < min ENTONCES
-            min = array[i]
-        FINSI
-    FINPARA
-    IMPRIMIR "Máximo: " + max
-    IMPRIMIR "Mínimo: " + min
-FIN
+12.   **¿Qué imprime este código?**
+
+```c++
+void saludo() {
+    cout << "Hola ";
+}
+int main() {
+    int resultado = saludo();
+    cout << resultado;
+    return 0;
+}
 ```
 
-*   **Código C++:**
+    a)  "Hola "
+    b) "Hola 0"
+    c)  "Error de compilación: no se puede asignar un `void` a un `int`.  "
+    d) "Que tal?"
 
-```cpp
+13.   **¿Qué imprime este código?**
+
+```c++
+int factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n - 1);
+}
+int main() {
+    cout << factorial(-1);
+    return 0;
+}
+```
+
+    a) Un numero grande, y seguramente se cuelgue
+    b) Error
+    c) Depende de si tienes mucho espacio en el stack
+    d) 1
+14.   **¿Qué imprime este código?**
+
+```c++
+void modificar(int x) {
+    x = 100;
+}
+int main() {
+    int y = 5;
+    modificar(y);
+    cout << y;
+    return 0;
+}
+```
+
+    a) "100"
+    b) "5"
+    c) Un error porque la función modifica sin devolver
+    d) "Error! y no es un puntero"
+
+15.   **¿Qué imprime este código?**
+
+```c++
+int valor_magico() {
+    int valor = 42;
+    return;
+}
+int main() {
+    cout << valor_magico();
+    return 0;
+}
+```
+
+    a) 0
+    b) Error porque la funcion no regresa nada
+    c) Si la variable no es magica, no imprime nada
+    d) Imprime el valor aleatorio que haya en memoria
+
+16.   **¿Qué ocurre al ejecutar este código?**
+```c++
+void funcion_desconocida();
+int main() {
+    funcion_desconocida();
+    return 0;
+}
+```
+
+    a) Se imprime hola mundo
+    b) Un error de compilacion
+    c) El programa hace agua
+    d) Se ejecuta pero realiza operaciones sin sentido
+
+17.   **¿Qué imprime este código?**
+
+```c++
 #include <iostream>
-#include <limits> // Para usar numeric_limits
-
 using namespace std;
+void imprimir(int arreglo[]) {
+    cout << arreglo[0] << arreglo[1];
+}
+int main() {
+    int numeros[] = {1, 2, 3};
+    imprimir(numeros);
+    return 0;
+}
+```
+
+    a) "Error: el tamaño del arreglo no está especificado en la función".  
+    b) "12"
+    c) Depende del optimizador del compilador
+    d) Nada.   La funcion se va de copas y se olvida de imprimir
+
+18.   **¿Qué imprime este código?**
+
+```c++
+int calcular(int a, int b) {
+  a = a * 2;
+  return a + b;
+}
 
 int main() {
-  int n;
-
-  cout << "Ingrese el tamaño del array: ";
-  cin >> n;
-
-  int array[n]; // Creación del array
-
-  cout << "Ingrese los elementos del array:" << endl;
-  for (int i = 0; i < n; ++i) {
-    cin >> array[i];
-  }
-
-  int max = array[0];
-  int min = array[0];
-
-  for (int i = 1; i < n; ++i) {
-    if (array[i] > max) {
-      max = array[i];
-    }
-    if (array[i] < min) {
-      min = array[i];
-    }
-  }
-
-  cout << "Máximo: " << max << endl;
-  cout << "Mínimo: " << min << endl;
-
+  int x = 5;
+  int y = 10;
+  int resultado = calcular(x, y);
+  cout << x << " " << y << " " << resultado;
   return 0;
 }
 ```
 
-**2. Matriz Identidad Condicional:**
+    a) 5 10 20
+    b) 10 10 20
+    c) Error de semántica
+    d) Sale un unicornio en el cout
 
-*   **Diagrama de Flujo (Mermaid):**
-
-```mermaid
-graph TD
-    A[Inicio] --> B{"Ingresar dimensión (n)"};
-    B --> C{"n es par?"};
-    C -- Yes --> D[Crear matriz identidad de n x n];
-    C -- No --> E[Crear matriz de n x n llena de ceros];
-    D --> F{Imprimir matriz};
-    E --> F;
-    F --> G[Fin];
-
-```
-
-*   **Pseudocódigo:**
-
-```
-INICIO
-    ENTRADA n (dimensión de la matriz)
-    SI n es par ENTONCES
-        CREAR matriz[n][n] (matriz identidad)
-        PARA i = 0 HASTA n-1 HACER
-            PARA j = 0 HASTA n-1 HACER
-                SI i == j ENTONCES
-                    matriz[i][j] = 1
-                SINO
-                    matriz[i][j] = 0
-                FINSI
-            FINPARA
-        FINPARA
-    SINO
-        CREAR matriz[n][n] (matriz llena de ceros)
-        PARA i = 0 HASTA n-1 HACER
-            PARA j = 0 HASTA n-1 HACER
-                matriz[i][j] = 0
-            FINPARA
-        FINPARA
-    FINSI
-    IMPRIMIR matriz
-FIN
-```
-
-*   **Código C++:**
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
+19.   **Este código, ¿qué imprime?**
+```c++
+void saludar(string saludo) {
+    cout << saludo << " Mundo!";
+}
 int main() {
-  int n;
-
-  cout << "Ingrese la dimensión de la matriz cuadrada: ";
-  cin >> n;
-
-  int matriz[n][n];
-
-  if (n % 2 == 0) {
-    // Crear matriz identidad
-    for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < n; ++j) {
-        if (i == j) {
-          matriz[i][j] = 1;
-        } else {
-          matriz[i][j] = 0;
-        }
-      }
-    }
-  } else {
-    // Llenar la matriz con ceros
-    for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < n; ++j) {
-        matriz[i][j] = 0;
-      }
-    }
-  }
-
-  // Imprimir la matriz
-  cout << "La matriz resultante es:" << endl;
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      cout << matriz[i][j] << " ";
-    }
-    cout << endl;
-  }
-
-  return 0;
+    saludar("¿Que tal?");
+    return 0;
 }
 ```
 
-**3.
+    a) ¿Que tal? Mundo
+    b) error
+    c) Dependede la configuracion regional
+    d) Se inicia un holocausto
 
-**Enunciados de los programas:**
+20.   **¿Qué imprime este código?**
+```c++
+int numeroMagico(int n) {
+    if (n > 0) {
+        return numeroMagico(n-1) + 1;
+    } else {
+        return 0;
+    }
+}
+int main() {
+    std::cout << numeroMagico(5) << std::endl;
+    return 0;
+}
+```
 
-1.  **Suma condicional de pares:** Escribe un programa que pida al usuario un número entero positivo `n`. El programa debe sumar todos los números pares desde 2 hasta `n`, pero solo si `n` es mayor o igual a 10. Si `n` es menor que 10, debe imprimir un mensaje indicando que el número es demasiado pequeño.
-   
-[Solucion 1](./Solucion1.md) 
-2. **Tabla de multiplicar con límite:** Crea un programa que solicite al usuario un número entero `x` (la base de la tabla) y un número entero `l` (el límite). El programa deberá mostrar la tabla de multiplicar de `x` desde 1 hasta `l`, pero deteniéndose si el producto excede 50.
-   
-[Solucion 2](./Solucion2.md)
-3. **Adivina el número (con pistas):** Diseña un juego donde la computadora genera un número aleatorio entre 1 y 100. El usuario tiene que adivinar el número. Después de cada intento, el programa debe indicar si el número ingresado es mayor o menor que el número secreto. El juego termina cuando el usuario adivina el número o después de 7 intentos.
-   
-[Solucion 3](./Solucion3.md) 
-4. **Contador de vocales:** Escribe un programa que pida al usuario que ingrese una frase. El programa debe contar el número de vocales (a, e, i, o, u) que contiene la frase (tanto mayúsculas como minúsculas).
-
-[Solucion 4](./Solucion4.md)
-
-5. **Calculadora de promedio con límite de notas:** Crea un programa que pida al usuario que ingrese una serie de notas (números flotantes). El programa debe seguir pidiendo notas hasta que el usuario ingrese un número negativo. Luego, el programa debe calcular el promedio de las notas ingresadas, pero solo si se ingresaron al menos 5 notas válidas. Si se ingresaron menos de 5 notas, debe mostrar un mensaje de error.
-
-[Solucion 5](./Solucion5.md)
+    a) Error
+    b) Depende del compilador
+    c) 5
+    d) Se invoca una entidad ancestral y se destruye el universo
 
 
-**¡Consejos adicionales!**
-
-*   **Prueben:**  No se limiten a copiar las soluciones.  Ingresen diferentes valores de entrada para verificar que sus programas funcionan correctamente en todas las situaciones posibles.
-*   **Comenten:**  Añadan comentarios a su código para explicar lo que están haciendo. Esto les ayudará a entender su propio código y a que otros lo entiendan también.
-*   **Dividan y vencerán:** Si un problema les parece demasiado complicado, intenten dividirlo en problemas más pequeños y manejables.
-*   **Practiquen:** La programación es una habilidad que se desarrolla con la práctica. Cuanto más practiquen, mejor serán.
-
-Espero que estos ejercicios sean útiles. ¡Mucho éxito con sus estudios! No duden en preguntar si tienen alguna duda.
