@@ -1,6 +1,6 @@
 ### Test sobre Ficheros en C++
 
-contestar en esta [hoja](https://docs.google.com/spreadsheets/d/1RgLqV7ShjwbhtxtbdhRyHWUhZSU4Qx_rnT60CeIyZak/edit?usp=sharing)
+contestar en esta [hoja](https://docs.google.com/spreadsheets/d/1RgLqV7ShjwbhtxtbdhRyHWUhZSU4Qx_rnT60CeIyZak/edit?gid=539611381#gid=539611381)
 
 1 ****¿Cuál es la principal diferencia entre un fichero de texto y un fichero binario?****
 
