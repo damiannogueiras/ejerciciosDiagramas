@@ -1,5 +1,7 @@
 ### Test sobre Ficheros en C++
 
+contestar en esta [hoja](https://docs.google.com/spreadsheets/d/1RgLqV7ShjwbhtxtbdhRyHWUhZSU4Qx_rnT60CeIyZak/edit?usp=sharing)
+
 1 ****¿Cuál es la principal diferencia entre un fichero de texto y un fichero binario?****
 
     a) Los ficheros de texto solo almacenan letras.  
@@ -137,6 +139,8 @@
 ---
 
 ### Test Práctico con Estructuras de Control sobre Ficheros de Texto en C++
+
+Contestar en esta [hoja](https://docs.google.com/spreadsheets/d/1RgLqV7ShjwbhtxtbdhRyHWUhZSU4Qx_rnT60CeIyZak/edit?usp=sharing)
 
 1.  **Apertura y Comprobación:** ¿Qué código verifica correctamente si un fichero "datos.txt" se ha abierto para lectura y muestra un mensaje de error si falla?
     *   a)
