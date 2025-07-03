@@ -1,263 +1,389 @@
-### Examen de Programación (Funciones)
+### Test sobre Ficheros en C++
 
-Contestar en esta [hoja](https://docs.google.com/spreadsheets/d/1jIvrf2gtddZdgSqw6U0U6KEX8DpS5IrsXiRPN58obTA/edit?gid=2022290513#gid=2022290513)
+1 ****¿Cuál es la principal diferencia entre un fichero de texto y un fichero binario?****
 
-
-**Preguntas Teóricas:**
-
-1.    **¿Cuál es el principal beneficio de usar la programación modular?**
-
-    a)  Hace que el código sea más difícil de entender para los demás.    
-    b)  Permite reutilizar código, facilita el mantenimiento y la depuración.    
-    c)  Obliga a usar nombres de variables muy largos.  
-    d)  Permite que el compilador se tome un descanso más largo.  
+    a) Los ficheros de texto solo almacenan letras.  
+    b) Los ficheros binarios almacenan los datos en formato binario, los de texto en ASCII.  
+    c) Los ficheros de texto son más eficientes.  
+    d) No hay diferencia.  
 
 
-2.    **En C++, ¿cómo se implementan los subprogramas?**
+2 **¿Qué librería de C++ es necesaria para trabajar con ficheros?**
 
-    a)  Con instrucciones mágicas.  
-    b)  Con funciones.  
-    c)  Con hechizos y conjuros.  
-    d)  Con poemas épicos.  
+    a) iostream
+    b) stdio
+    c) fstream
+    d) fileio
 
-3.    **¿Qué es la "cabecera" de una función?**
+3 **¿Qué clase se utiliza para escribir en un fichero?**
 
-    a)  La parte de arriba de un comentario.  
-    b)  El tipo de valor devuelto, el nombre de la función y la lista de parámetros.  
-    c)  Un sombrero que se pone el programador cuando crea la función.  
-    d)  La directiva `#include`.  
+    a) ifstream
+    b) ofstream
+    c) fstream
+    d) iofstream
 
-4.    **¿Qué significa que una función sea de tipo `void`?**
+4 **¿Qué clase se utiliza para leer de un fichero?**
 
-    a)  Que no tiene alma.  
-    b)  Que no devuelve ningún valor.  
-    c)  Que solo puede ser llamada por fantasmas.  
-    d)  Que está vacía y no hace nada.  
+    a) ifstream
+    b) ofstream
+    c) fstream
+    d) ofile
 
-5.    **¿Cuál es la propiedad por la cual las funciones tienen la capacidad de llamarse a sí mismas?**
+5 **¿Qué método se utiliza para abrir un fichero?**
 
-    a)  La arrogancia.  
-    b)  La recursividad.  
-    c)  La telepatía.  
-    d)  El egocentrismo.  
+    a) open()
+    b) create()
+    c) file()
+    d) fopen()
 
-6.    **¿Qué son los prototipos de función?**
+6 **¿Qué método se utiliza para cerrar un fichero?**
 
-    a) Una versión temprana e inacabada de la función
-    b) La parte que describe la función pero no la implementa
-    c) Funciones para imprimir código
-    d) Versiones a escala para ver el diseño
+    a) close()
+    b) end()
+    c) finish()
+    d) fclose()
 
-7.    **En C++, ¿por qué es importante el orden en el que se declaran las funciones?**
+7 **¿Qué significa la opción `ifstream::binary` al abrir un fichero?**
 
-    a) Para que el código se vea más bonito.  
-    b) Porque el compilador necesita saber de la existencia de la función antes de usarla.  
-    c) Porque si no el programa no se ejecutará durante la noche.  
-    d) En realidad el orden no importa.  
+    a) Que el fichero es de texto.
+    b) Que el fichero es binario.
+    c) Que el fichero está encriptado.
+    d) Que el fichero es de solo lectura.
 
-8.    **¿Qué son los parámetros de una función?**
+8 **¿Qué operador se utiliza para escribir datos en un fichero de texto?**
 
-    a) Las variables que se utilizan solo para decorar la función.  
-    b) Las variables locales a las que se les asigna un valor antes de ejecutar el cuerpo de la función.  
-    c) Los nombres que usa la función para insultar a otras funciones.  
-    d) Las condiciones climáticas necesarias para que la función se ejecute.  
+    a) `<<`
+    b) `>>`
+    c) `=`
+    d) `+`
 
-9.    **¿Qué ocurre cuando se pasa un parámetro por valor a una función?**
+9 **¿Qué operador se utiliza para leer datos de un fichero de texto?**
 
-    a) La función puede modificar la variable original.  
-    b) Se realiza una copia del valor de la variable en el ámbito de la función.  
-    c) La variable original se teletransporta al ámbito de la función.  
-    d) El valor de la variable original se convierte en oro.  
+    a) `<<`
+    b) `>>`
+    c) `=`
+    d) `-`
 
-10.   **¿Cuándo es útil el paso por referencia?**
+10 **¿Qué función se utiliza para leer una línea completa de un fichero de texto?**
 
-    a) Cuando no te sabes el nombre de la variable que quieres modificar.  
-    b) Cuando quieres modificar la variable original desde la función.  
-    c) Cuando la variable original está muy lejos.  
-    d) Cuando la variable original es demasiado grande para copiarla.  
+    a) read()
+    b) getline()
+    c) get()
+    d) scan()
 
-**Preguntas con Código:**
+11 **¿Qué método se utiliza para leer un solo byte de un fichero binario?**
 
-11.   **¿Qué imprime este código?**
+    a) read()
+    b) getline()
+    c) get()
+    d) scan()
 
-```c++
-int suma(int a, int b) {
-    return a + b;
-}
-int main() {
-    int x = 5;
-    suma(x, "hola");
-    return 0;
-}
-```
+12 **¿Qué método se utiliza para escribir un solo byte en un fichero binario?**
 
-    a) "8"  
-    b) "Error de compilación: no se puede sumar un entero y una cadena.  "  
-    c) "5hola"  
-    d) "Depende de si la cadena es muy amigable"  
+    a) write()
+    b) put()
+    c) print()
+    d) insert()
 
-12.   **¿Qué imprime este código?**
+13 **¿Qué método se utiliza para mover el puntero de lectura/escritura en un fichero?**
 
-```c++
-void saludo() {
-    cout << "Hola ";
-}
-int main() {
-    int resultado = saludo();
-    cout << resultado;
-    return 0;
-}
-```
+    a) move()
+    b) seekg()
+    c) shift()
+    d) position()
 
-    a)  "Hola "
-    b) "Hola 0"
-    c)  "Error de compilación: no se puede asignar un `void` a un `int`.  "
-    d) "Que tal?"
+14 **¿Qué indica el método `eof()`?**
 
-13.   **¿Qué imprime este código?**
+    a) Si el fichero está abierto.
+    b) Si se ha llegado al final del fichero.
+    c) Si hay un error en el fichero.
+    d) El tamaño del fichero.
 
-```c++
-int factorial(int n) {
-    if (n == 0) return 1;
-    else return n * factorial(n - 1);
-}
-int main() {
-    cout << factorial(-1);
-    return 0;
-}
-```
+15 **¿Qué significa "RAM"?**
 
-    a) Un numero grande, y seguramente se cuelgue
-    b) Error
-    c) Depende de si tienes mucho espacio en el stack
-    d) 1
-14.   **¿Qué imprime este código?**
+    a) Random Access Memory
+    b) Read Only Memory
+    c) Real Access Memory
+    d) Record Access Memory
 
-```c++
-void modificar(int x) {
-    x = 100;
-}
-int main() {
-    int y = 5;
-    modificar(y);
-    cout << y;
-    return 0;
-}
-```
+16 **¿Qué es un "fichero" en el contexto de la programación?**
 
-    a) "100"
-    b) "5"
-    c) Un error porque la función modifica sin devolver
-    d) "Error! y no es un puntero"
+    a) Una carpeta en el disco duro.
+    b) Un conjunto de datos almacenados en memoria secundaria.
+    c) Una variable en el programa.
+    d) Una función en el programa.
 
-15.   **¿Qué imprime este código?**
+17 **¿Qué es más eficiente en términos de espacio, un fichero de texto o uno binario?**
 
-```c++
-int valor_magico() {
-    int valor = 42;
-    return;
-}
-int main() {
-    cout << valor_magico();
-    return 0;
-}
-```
+    a) Un fichero de texto.
+    b) Un fichero binario.
+    c) Ambos son iguales.
+    d) Depende del contenido.
 
-    a) 0
-    b) Error porque la funcion no regresa nada
-    c) Si la variable no es magica, no imprime nada
-    d) Imprime el valor aleatorio que haya en memoria
+18 **¿Qué paso es crucial al terminar de usar un fichero de escritura?**
 
-16.   **¿Qué ocurre al ejecutar este código?**
-```c++
-void funcion_desconocida();
-int main() {
-    funcion_desconocida();
-    return 0;
-}
-```
+    a) Abrirlo.
+    b) Cerrarlo.
+    c) Leerlo.
+    d) Encriptarlo.
 
-    a) Se imprime hola mundo
-    b) Un error de compilacion
-    c) El programa hace agua
-    d) Se ejecuta pero realiza operaciones sin sentido
+20 **¿Qué hace la función `fail()`?**
 
-17.   **¿Qué imprime este código?**
+    a) Cierra el fichero.
+    b) Comprueba si hay errores al abrir el fichero.
+    c) Escribe en el fichero.
+    d) Lee del fichero.
 
-```c++
-#include <iostream>
-using namespace std;
-void imprimir(int arreglo[]) {
-    cout << arreglo[0] << arreglo[1];
-}
-int main() {
-    int numeros[] = {1, 2, 3};
-    imprimir(numeros);
-    return 0;
-}
-```
+---
 
-    a) "Error: el tamaño del arreglo no está especificado en la función".  
-    b) "12"
-    c) Depende del optimizador del compilador
-    d) Nada.   La funcion se va de copas y se olvida de imprimir
+### Test Práctico con Estructuras de Control sobre Ficheros de Texto en C++
 
-18.   **¿Qué imprime este código?**
+1.  **Apertura y Comprobación:** ¿Qué código verifica correctamente si un fichero "datos.txt" se ha abierto para lectura y muestra un mensaje de error si falla?
+    *   a)
+        ```cpp
+        ifstream archivo("datos.txt");
+        if (archivo) { /* continuar */ } else { cout << "Error"; }
+        ```
+    *   b)
+        ```cpp
+        ifstream archivo("datos.txt");
+        if (archivo.fail()) { cout << "Error"; } else { /* continuar */ }
+        ```
+    *   c)
+        ```cpp
+        ifstream archivo("datos.txt");
+        if (archivo.good()) { /* continuar */ } else { cout << "Error"; }
+        ```
+    *   d)
+        ```cpp
+        ifstream archivo("datos.txt");
+        if (archivo.isOpen()) { /* continuar */ } else { cout << "Error"; }
+        ```
 
-```c++
-int calcular(int a, int b) {
-  a = a * 2;
-  return a + b;
-}
+2.  **Lectura Condicional:** ¿Qué código lee una línea del fichero "datos.txt" solo si el fichero está abierto correctamente?
+    *   a)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        if (archivo.good()) { getline(archivo, linea); }
+        ```
+    *   b)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        if (archivo) { getline(archivo, linea); }
+        ```
+    *   c)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        getline(archivo, linea); // Siempre intenta leer
+        ```
+    *   d)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        while (archivo) { getline(archivo, linea); }
+        ```
 
-int main() {
-  int x = 5;
-  int y = 10;
-  int resultado = calcular(x, y);
-  cout << x << " " << y << " " << resultado;
-  return 0;
-}
-```
+3.  **Escritura con `if`:** ¿Qué código escribe "Éxito" en "log.txt" solo si el fichero se abre correctamente?
+    *   a)
+        ```cpp
+        ofstream log("log.txt");
+        if (log.good()) { log << "Éxito"; }
+        ```
+    *   b)
+        ```cpp
+        ofstream log("log.txt");
+        if (log) { log << "Éxito"; }
+        ```
+    *   c)
+        ```cpp
+        ofstream log("log.txt");
+        log << "Éxito"; // Siempre escribe
+        ```
+    *   d)
+        ```cpp
+        ofstream log("log.txt");
+        while (log) { log << "Éxito"; }
+        ```
 
-    a) 5 10 20
-    b) 10 10 20
-    c) Error de semántica
-    d) Sale un unicornio en el cout
+4.  **Bucle de Lectura:** ¿Qué bucle lee todas las líneas de un fichero llamado "datos.txt" e imprime cada línea en la consola?
+    *   a)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        while (archivo.good()) { getline(archivo, linea); cout << linea << endl; }
+        ```
+    *   b)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        while (!archivo.eof()) { getline(archivo, linea); cout << linea << endl; }
+        ```
+    *   c)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        do { getline(archivo, linea); cout << linea << endl; } while (archivo);
+        ```
+    *   d)
+        ```cpp
+        ifstream archivo("datos.txt");
+        string linea;
+        for (int i = 0; i < 10; i++) { getline(archivo, linea); cout << linea << endl; }
+        ```
 
-19.   **Este código, ¿qué imprime?**
-```c++
-void saludar(string saludo) {
-    cout << saludo << " Mundo!";
-}
-int main() {
-    saludar("¿Que tal?");
-    return 0;
-}
-```
+5.  **Escritura Condicional con Bucle:** ¿Qué código escribe números del 1 al 5 en "numeros.txt", uno por línea, solo si el fichero se abre correctamente?
+    *   a)
+        ```cpp
+        ofstream numeros("numeros.txt");
+        if (numeros) { for (int i = 1; i <= 5; i++) { numeros << i << endl; } }
+        ```
+    *   b)
+        ```cpp
+        ofstream numeros("numeros.txt");
+        for (int i = 1; i <= 5; i++) { numeros << i << endl; } // Siempre escribe
+        ```
+    *   c)
+        ```cpp
+        ofstream numeros("numeros.txt");
+        while (numeros) { for (int i = 1; i <= 5; i++) { numeros << i << endl; } }
+        ```
+    *   d)
+        ```cpp
+        ofstream numeros("numeros.txt");
+        if (numeros.isOpen()) { for (int i = 1; i <= 5; i++) { numeros << i << endl; } }
+        ```
 
-    a) ¿Que tal? Mundo
-    b) error
-    c) Dependede la configuracion regional
-    d) Se inicia un holocausto
+6.  **Lectura y Condición:** ¿Qué código lee un número del fichero "numero.txt" y muestra "Par" si es par, o "Impar" si es impar?
+    *   a)
+        ```cpp
+        ifstream archivo("numero.txt");
+        int num;
+        archivo >> num;
+        if (num % 2 == 0) { cout << "Par"; } else { cout << "Impar"; }
+        ```
+    *   b)
+        ```cpp
+        ifstream archivo("numero.txt");
+        int num;
+        if (archivo >> num) { if (num % 2 == 0) { cout << "Par"; } else { cout << "Impar"; } }
+        ```
+    *   c)
+        ```cpp
+        ifstream archivo("numero.txt");
+        int num;
+        if (archivo.is_open()) { archivo >> num; if (num % 2 == 0) { cout << "Par"; } else { cout << "Impar"; } }
+        ```
+    *   d)
+        ```cpp
+        ifstream archivo("numero.txt");
+        int num;
+        while (archivo >> num) { if (num % 2 == 0) { cout << "Par"; } else { cout << "Impar"; } }
+        ```
 
-20.   **¿Qué imprime este código?**
-```c++
-int numeroMagico(int n) {
-    if (n > 0) {
-        return numeroMagico(n-1) + 1;
-    } else {
-        return 0;
-    }
-}
-int main() {
-    std::cout << numeroMagico(5) << std::endl;
-    return 0;
-}
-```
+7.  **Escritura con Bucle y Condición:** ¿Qué código escribe los números pares del 2 al 10 en "pares.txt"?
+    *   a)
+        ```cpp
+        ofstream pares("pares.txt");
+        for (int i = 2; i <= 10; i += 2) { pares << i << endl; }
+        ```
+    *   b)
+        ```cpp
+        ofstream pares("pares.txt");
+        if (pares) { for (int i = 2; i <= 10; i++) { if (i % 2 == 0) { pares << i << endl; } } }
+        ```
+    *   c)
+        ```cpp
+        ofstream pares("pares.txt");
+        int i = 2;
+        while (i <= 10) { pares << i << endl; i += 2; }
+        ```
+    *   d)
+        ```cpp
+        ofstream pares("pares.txt");
+        if (pares.good()) { for (int i = 2; i <= 10; i += 2) { pares << i << endl; } }
+        ```
 
-    a) Error
-    b) Depende del compilador
-    c) 5
-    d) Se invoca una entidad ancestral y se destruye el universo
+8.  **Lectura con `while` y `if`:** ¿Qué código lee números de "numeros.txt" y suma solo los números positivos?
+    *   a)
+        ```cpp
+        ifstream archivo("numeros.txt");
+        int num, suma = 0;
+        while (archivo >> num) { if (num > 0) { suma += num; } }
+        ```
+    *   b)
+        ```cpp
+        ifstream archivo("numeros.txt");
+        int num, suma = 0;
+        while (!archivo.eof()) { archivo >> num; if (num > 0) { suma += num; } }
+        ```
+    *   c)
+        ```cpp
+        ifstream archivo("numeros.txt");
+        int num, suma = 0;
+        for (int i = 0; i < 10; i++) { archivo >> num; if (num > 0) { suma += num; } }
+        ```
+    *   d)
+        ```cpp
+        ifstream archivo("numeros.txt");
+        int num, suma = 0;
+        if (archivo) { while (archivo >> num) { if (num > 0) { suma += num; } } }
+        ```
+
+9.  **Escritura Condicional con Error:** ¿Qué código intenta abrir "datos.txt" para escritura y, si falla, escribe un mensaje de error en la consola?
+    *   a)
+        ```cpp
+        ofstream archivo("datos.txt");
+        if (!archivo.good()) { cout << "Error al abrir el fichero"; }
+        ```
+    *   b)
+        ```cpp
+        ofstream archivo("datos.txt");
+        if (archivo.fail()) { cout << "Error al abrir el fichero"; }
+        ```
+    *   c)
+        ```cpp
+        ofstream archivo("datos.txt");
+        if (!archivo.is_open()) { cout << "Error al abrir el fichero"; }
+        ```
+    *   d)
+        ```cpp
+        ofstream archivo("datos.txt");
+        if (!archivo) { cout << "Error al abrir el fichero"; }
+        ```
+
+10. **Lectura y Escritura Condicional:** ¿Qué código lee líneas de "entrada.txt" y las escribe en "salida.txt" solo si ambas operaciones son exitosas?
+    *   a)
+        ```cpp
+        ifstream entrada("entrada.txt");
+        ofstream salida("salida.txt");
+        string linea;
+        if (entrada && salida) { while (getline(entrada, linea)) { salida << linea << endl; } }
+        ```
+    *   b)
+        ```cpp
+        ifstream entrada("entrada.txt");
+        ofstream salida("salida.txt");
+        string linea;
+        while (getline(entrada, linea)) { salida << linea << endl; } // Siempre intenta
+        ```
+    *   c)
+        ```cpp
+        ifstream entrada("entrada.txt");
+        ofstream salida("salida.txt");
+        string linea;
+        if (entrada.is_open() && salida.is_open()) { while (getline(entrada, linea)) { salida << linea << endl; } }
+        ```
+    *   d)
+        ```cpp
+        ifstream entrada("entrada.txt");
+        ofstream salida("salida.txt");
+        string linea;
+        if (entrada.good() && salida.good()) { while (getline(entrada, linea)) { salida << linea << endl; } }
+        ```
+
+
 
 
